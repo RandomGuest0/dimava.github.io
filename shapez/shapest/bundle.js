@@ -53054,9 +53054,9 @@ class MapChunk {
                 subShapeB = 'Ru';
             }
             key = subShapeA.repeat(3) + subShapeB.repeat(3);
-        } else {
-            // Finally there is a mix of everything
-            let subShapes = [
+        } else if (distanceToOriginInChunks < 30) {
+			// Later patches have mixes of pairs
+			let subShapes = [
                 this.internalGenerateRandomSubShape(rng, weights),
                 this.internalGenerateRandomSubShape(rng, weights),
                 this.internalGenerateRandomSubShape(rng, weights),
@@ -53064,6 +53064,19 @@ class MapChunk {
             if (subShapes.filter(e=>e=='Wu').length > 1)
                 subShapes[1] = 'Ru';
             key = subShapes.map(e=>e.repeat(2)).join('');
+		} else {
+            // Finally there is a mix of everything
+            let subShapes = [
+                this.internalGenerateRandomSubShape(rng, weights),
+                this.internalGenerateRandomSubShape(rng, weights),
+                this.internalGenerateRandomSubShape(rng, weights),
+				this.internalGenerateRandomSubShape(rng, weights),
+                this.internalGenerateRandomSubShape(rng, weights),
+                this.internalGenerateRandomSubShape(rng, weights),
+            ];
+            if (subShapes.filter(e=>e=='Wu').length > 1)
+                subShapes[1] = 'Ru';
+            key = subShapes.map(e=>e.repeat(1)).join('');
         }
 
         this.internalGeneratePatch(
