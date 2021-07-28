@@ -53054,7 +53054,7 @@ class MapChunk {
                 subShapeB = 'Ru';
             }
             key = subShapeA.repeat(3) + subShapeB.repeat(3);
-        } else if (distanceToOriginInChunks < 30) {
+        } else if (distanceToOriginInChunks < 60) {
 			// Later patches have mixes of pairs
 			let subShapes = [
                 this.internalGenerateRandomSubShape(rng, weights),
