@@ -53144,12 +53144,12 @@ class MapChunk {
             return;
         }
 
-        const digitPatchChance = Object(_core_utils__WEBPACK_IMPORTED_MODULE_3__["clamp"])((distanceToOriginInChunks - 15) / 25, 0, 1) * 0.5;
+        const digitPatchChance = Object(_core_utils__WEBPACK_IMPORTED_MODULE_3__["clamp"])((distanceToOriginInChunks - 60) / 25, 0, 1) * 0.5;
         if (rng.next() < digitPatchChance / 8) {
             const shapePatchSize = Math.max(2, Math.round(1 + Object(_core_utils__WEBPACK_IMPORTED_MODULE_3__["clamp"])(distanceToOriginInChunks / 8, 0, 4)));
             this.internalGenerateNumberPatch(rng, shapePatchSize, distanceToOriginInChunks);
         }
-        const letterPatchChance = Object(_core_utils__WEBPACK_IMPORTED_MODULE_3__["clamp"])((distanceToOriginInChunks - 15) / 25, 0, 1) * 0.5;
+        const letterPatchChance = Object(_core_utils__WEBPACK_IMPORTED_MODULE_3__["clamp"])((distanceToOriginInChunks - 60) / 25, 0, 1) * 0.5;
         if (rng.next() < letterPatchChance / 8) {
             const shapePatchSize = Math.max(2, Math.round(1 + Object(_core_utils__WEBPACK_IMPORTED_MODULE_3__["clamp"])(distanceToOriginInChunks / 8, 0, 4)));
             this.internalGenerateLetterPatch(rng, shapePatchSize, distanceToOriginInChunks);
