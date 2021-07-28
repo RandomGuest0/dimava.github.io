@@ -25685,9 +25685,9 @@ if (options.fullVersion && !false) {
 }
 
 // Allow testing full version outside of standalone
-if (options.sandboxMode && !false) {
-    queryParamOptions.sandboxMode = true;
-}
+//if (options.sandboxMode && !false) {
+    //queryParamOptions.sandboxMode = true;
+//}
 
 
 /***/ }),
@@ -40632,18 +40632,18 @@ class HubGoals extends _savegame_serialization__WEBPACK_IMPORTED_MODULE_3__["Bas
         this.computeNextGoal();
 
         // Allow quickly switching goals in dev mode
-        if (true) {
-            window.addEventListener("keydown", ev => {
-                if (ev.key === "b") {
+        //if (true) {
+            //window.addEventListener("keydown", ev => {
+                //if (ev.key === "b") {
                     // root is not guaranteed to exist within ~0.5s after loading in
-                    if (this.root && this.root.app && this.root.app.gameAnalytics) {
-                        if (!this.isEndOfDemoReached()) {
-                            this.onGoalCompleted();
-                        }
-                    }
-                }
-            });
-        }
+                    //if (this.root && this.root.app && this.root.app.gameAnalytics) {
+                        //if (!this.isEndOfDemoReached()) {
+                            //this.onGoalCompleted();
+                        //}
+                    //}
+                //}
+            //});
+        //}
     }
 
     /**
